@@ -1,3 +1,5 @@
+#' @import ggplot2
+
 elbow_stabs <- function(q,lq) {
   df = data.frame(lq)
   plot = ggplot2::ggplot(df, ggplot2::aes(y = lq, x = 1:nrow(df))) + ggplot2::geom_line() +

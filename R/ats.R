@@ -2,7 +2,7 @@
 #' @param s A stabsel object
 #' @param type Either "index" or "prob" to return index or probability threshold
 #' @returns Index or probability of the last selected threshold
-
+#' @export
 
 ats = function(s, type = "index"){
   if(type != "index" & type != "prob"){

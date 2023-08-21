@@ -7,6 +7,12 @@
 #' @examples
 #' plot_stabs(s, which = 2, threshold = "MTS", top = "all")
 #' plot_stabs(s, which = 1, threshold = "ATS", top = 5)
+#' @export
+#' @import ggplot2
+#' @importFrom tibble rownames_to_column
+#' @import dplyr
+#' @importFrom forcats fct_reorder
+
 
 
 plot_stabs = function(s, which = 1, threshold = "ATS", top = 10){
