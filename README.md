@@ -4,7 +4,7 @@ Extends stability selection and introduces automatic threshold selection to comp
 
 The main function to create a stabsel object using the `stabs` package:
 
-```{r}
+``` r
 s = stabs::stabsel(X, y, cutoff, PFER)
 ```
 The object `s` can be inputted into the function `mhstability::plot_stabs`, to plot the variable selection probability scree plot. It automatically computes the automatic threshold selection (ATS) rate $\hat{\pi}$. This can be manually found using the `ats` function. The function can also plot the likelihood function, used to determine the optimal threshold. 
@@ -21,7 +21,7 @@ plot_stabs(s, which = 2)
 plot_stabs(s, which = 1, threshold = "MTS", top = 4)
 
 # Plot variable selection probability scree plot with respect to automatic threshold selection and display all selected variables
-plot_stabs(s, which = 1, threshold = "ATS", top = "all)
+plot_stabs(s, which = 1, threshold = "ATS", top = "all")
 
 # Compute elbow index
 ats(s, type = "index")
