@@ -1,6 +1,6 @@
 # mhstability
 
-Extends stability selection and introduces automatic threshold selection to compute a data-adaptive stability cutoff. This is an R Package created to extend the use of stabs objects from the stabs package. The package also includes an `ats` function to compute the threshold. 
+Extends stability selection and introduces automatic threshold selection to compute a data-adaptive stability cutoff. This is an R Package created to extend the use of stabs objects from the stabs package. Visualises variable selection probability and likelihood function through `plot_stabs`. The package also includes an `ats` function to compute the threshold. 
 
 
 # Installation
@@ -46,3 +46,9 @@ ats(s, type = "prob")
 
 * Shah, R. D. and Samworth, R. J. (2013). Variable selection with error control: another look at stability selection. Journal of the Royal     Statistical Society. Series B (Statistical
 Methodology), 75(1):55–80. Publisher: Wiley.
+
+* Hofner, B. and Hothorn, T. (2021). stabs: Stability Selection with Error Control.
+
+* Zhu, M. and Ghodsi, A. (2006). Automatic dimensionality selection from the scree plot
+via the use of profile likelihood. Computational Statistics & Data Analysis, 51(2):918–
+930.
