@@ -11,6 +11,7 @@ devtools::install_github("MHuang2001/mhstability")
 library(mhstability)
 ```
 
+# Usage 
 
 The main function to create a stabs object using the `stabs` package:
 
@@ -19,7 +20,6 @@ s = stabs::stabsel(X, y, cutoff, PFER)
 ```
 The object `s` can be inputted into the function `mhstability::plot_stabs`, to plot the variable selection probability scree plot. It automatically computes the automatic threshold selection (ATS) rate $\hat{\pi}$. This can be manually found using the `ats` function. The function can also plot the likelihood function, used to determine the optimal threshold. 
 
-# Usage 
 ``` r
 # Plot variable selection probability scree plot
 plot_stabs(s, which = 1)
