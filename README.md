@@ -50,5 +50,4 @@ Methodology), 75(1):55–80. Publisher: Wiley.
 * Hofner, B. and Hothorn, T. (2021). stabs: Stability Selection with Error Control.
 
 * Zhu, M. and Ghodsi, A. (2006). Automatic dimensionality selection from the scree plot
-via the use of profile likelihood. Computational Statistics & Data Analysis, 51(2):918–
-930.
+via the use of profile likelihood. Computational Statistics & Data Analysis, 51(2):918–930.
