@@ -1,5 +1,6 @@
 #include <Rcpp.h>
 using namespace Rcpp;
+//' @export
 // [[Rcpp::export]]
 NumericVector getLQ(const NumericVector& d) {
   int p = d.size();
