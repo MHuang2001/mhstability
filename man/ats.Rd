@@ -9,7 +9,7 @@ ats(s, type = "index")
 \arguments{
 \item{s}{A stabsel object}
 
-\item{type}{Either "index" or "prob" to return index or probability threshold}
+\item{type}{Either "index" or "prob" to return index of last selected variable, or threshold for deeming variables stable}
 }
 \value{
 Index or probability of the last selected threshold

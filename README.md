@@ -15,7 +15,7 @@ library(mhstability)
 
 # Usage 
 
-The main function to create a stabs object using the `stabs` package:
+The main function to create a stabs object and conduct stability selection using the `stabs` package:
 
 ``` r
 s = stabs::stabsel(X, y, cutoff, PFER)
@@ -41,6 +41,10 @@ ats(s, type = "index")
 # Compute ATS cutoff
 ats(s, type = "prob")
 ```
+
+# Notice
+
+This work has been created as part of my Honours degree at the University of Sydney 2023. 
 
 # References
 

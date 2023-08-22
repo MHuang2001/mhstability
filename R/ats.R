@@ -1,6 +1,6 @@
 #' Compute index and probability of stable threshold using automatic threshold selection
 #' @param s A stabsel object
-#' @param type Either "index" or "prob" to return index or probability threshold
+#' @param type Either "index" or "prob" to return index of last selected variable, or threshold for deeming variables stable
 #' @returns Index or probability of the last selected threshold
 #' @export
 

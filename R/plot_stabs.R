@@ -36,11 +36,6 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = 10){
   if (threshold != "ATS" & threshold != "MTS"){
     stop("Threshold must be either ATS or MTS")
   }
-
-
-
-
-
   if (which == 1){
     q = getR(convert(s))
     q_val = (sort(s$phat[,ncol(s$phat)], decreasing = T)[q]) |> as.vector()
@@ -71,8 +66,6 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = 10){
       el_top = el[order(el$value, decreasing = T),][1:top,]
       Yaxis = round(top/2)
     }
-
-
 
     plot1 = (el_top |>  dplyr::mutate(variable = forcats::fct_reorder(variable, value, .desc = F))) |>
       ggplot2::ggplot(ggplot2::aes(variable, value)) +
