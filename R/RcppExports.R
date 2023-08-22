@@ -7,6 +7,7 @@ getLQ <- function(d) {
 }
 
 #' @export
+#' @import Rcpp
 getR <- function(d) {
     .Call('_mhstability_getR', PACKAGE = 'mhstability', d)
 }

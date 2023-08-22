@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 //' @export
+//' @import Rcpp
 // [[Rcpp::export]]
 int getR(const NumericVector& d) {
   int p = d.size();

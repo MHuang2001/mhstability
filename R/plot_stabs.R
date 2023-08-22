@@ -10,6 +10,8 @@
 #' @export
 #' @import ggplot2
 #' @importFrom tibble rownames_to_column
+#' @import Rcpp
+#' @useDynLib mhstability
 #' @import dplyr
 #' @importFrom forcats fct_reorder
 
