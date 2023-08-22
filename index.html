@@ -53,22 +53,22 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="mhstability">mhstability<a class="anchor" aria-label="anchor" href="#mhstability"></a>
 </h1></div>
-<p>Extends stability selection and introduces automatic threshold selection to compute a data-adaptive stability cutoff. This is an R Package created to extend the use of stabs objects from the stabs package. Visualises variable selection probability and likelihood function through <code>plot_stabs</code>. The package also includes an <code>ats</code> function to compute the threshold.</p>
+<p>Extends stability selection and introduces automatic threshold selection to compute a data-adaptive stability cutoff. This is an R Package created to complement the use of stabs objects from the stabs package. It visualises variable selection probability and likelihood function through <code>plot_stabs</code>. The package also includes an <code>ats</code> function to compute the threshold.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
 <p>Install package via GitHub</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"MHuang2001/mhstability"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mhuang2001.github.io/mhstability/">mhstability</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"MHuang2001/mhstability"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mhstability</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level1">
 <h1 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h1>
 <p>The main function to create a stabs object using the <code>stabs</code> package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">s</span> <span class="op">=</span> <span class="fu">stabs</span><span class="fu">::</span><span class="fu">stabsel</span><span class="op">(</span><span class="va">X</span>, <span class="va">y</span>, <span class="va">cutoff</span>, <span class="va">PFER</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">s</span> <span class="op">=</span> <span class="fu">stabs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stabs/man/stabsel.html" class="external-link">stabsel</a></span><span class="op">(</span><span class="va">X</span>, <span class="va">y</span>, <span class="va">cutoff</span>, <span class="va">PFER</span><span class="op">)</span></span></code></pre></div>
 <p>The object <code>s</code> can be inputted into the function <code><a href="reference/plot_stabs.html">mhstability::plot_stabs</a></code>, to plot the variable selection probability scree plot. It automatically computes the automatic threshold selection (ATS) rate <span class="math inline"><em>π̂</em></span>. This can be manually found using the <code>ats</code> function. The function can also plot the likelihood function, used to determine the optimal threshold.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot variable selection probability scree plot</span></span>
