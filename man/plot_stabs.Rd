@@ -4,7 +4,7 @@
 \alias{plot_stabs}
 \title{Plot stabsel object}
 \usage{
-plot_stabs(s, which = 1, threshold = "ATS", top = 10)
+plot_stabs(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$p, 10))
 }
 \arguments{
 \item{s}{A stabsel object}
@@ -22,6 +22,22 @@ Variable Probability or Likelihood Plot
 Plot stabsel object
 }
 \examples{
-plot_stabs(s, which = 2, threshold = "MTS", top = "all")
-plot_stabs(s, which = 1, threshold = "ATS", top = 5)
+library(mhstability)
+y = mtcars[,2]
+X = mtcars[,3:ncol(mtcars)]
+res = stabs::stabsel(x = X, y = y, B = 50, fitfun = stabs::lars.lasso, PFER = 2, cutoff = 0.6, sampling.type = "SS", assumption = "r-concave")
+mhstability::plot_stabs(res, which = 1)
+mhstability::plot_stabs(res, which = 2)
+}
+\references{
+Hofner, B. and Hothorn, T. (2021). stabs: Stability Selection with Error Control.
+
+Meinshausen, N. and Buehlmann, P. (2009). Stability Selection. arXiv:0809.2932 [stat]
+
+Shah, R. D. and Samworth, R. J. (2013). Variable selection with error control:
+another look at stability selection. Journal of the Royal Statistical Society. Series B (Statistical
+Methodology), 75(1):55–80. Publisher: Wiley.
+
+Zhu, M. and Ghodsi, A. (2006). Automatic dimensionality selection from the scree plot via the use of profile likelihood.
+Computational Statistics & Data Analysis, 51(2):918–930.
 }
