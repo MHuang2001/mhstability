@@ -37,7 +37,10 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
   if (which != 1 & which != 2){
     stop("Which must be either 1 or 2")
   }
-
+  if (top > s$p){
+    warning("Variables selected is greater than p. Only displaying top p.")
+    top = s$p
+  }
   if(s$assumption == "r-concave" | s$assumption  == "unimodal"){
     B = s$B*2
     sample.type.nice = ifelse(s$assumption == "r-concave",  "CPSS (r-concave)", "CPSS (Unimodal)")
@@ -54,8 +57,6 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
     q_val = (sort(s$phat[,ncol(s$phat)], decreasing = T)[q]) |> as.vector()
     el = tibble::rownames_to_column(data.frame(s$phat[,ncol(s$phat)]))
     colnames(el) = c("variable", "value")
-
-
     if(threshold == "ATS"){
       el$Legend = dplyr::case_when(el$value >= q_val ~ "Selected",
                                    el$value < q_val ~ "Not Selected")
@@ -103,3 +104,4 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
     return(elbow_stabs(q,lq))
   }
 }
+
