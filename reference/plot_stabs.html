@@ -42,7 +42,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">s</span>, which <span class="op">=</span> <span class="fl">1</span>, threshold <span class="op">=</span> <span class="st">"ATS"</span>, top <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">s</span>, which <span class="op">=</span> <span class="fl">1</span>, threshold <span class="op">=</span> <span class="st">"ATS"</span>, top <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">s</span><span class="op">$</span><span class="va">p</span> <span class="op">&lt;</span> <span class="fl">10</span>, <span class="va">s</span><span class="op">$</span><span class="va">p</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -69,13 +69,28 @@
 
 <p>Variable Probability or Likelihood Plot</p>
     </div>
+    <div class="section level2">
+    <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
+    <p>Hofner, B. and Hothorn, T. (2021). stabs: Stability Selection with Error Control.</p>
+<p>Meinshausen, N. and Buehlmann, P. (2009). Stability Selection. arXiv:0809.2932 [stat]</p>
+<p>Shah, R. D. and Samworth, R. J. (2013). Variable selection with error control:
+another look at stability selection. Journal of the Royal Statistical Society. Series B (Statistical
+Methodology), 75(1):55–80. Publisher: Wiley.</p>
+<p>Zhu, M. and Ghodsi, A. (2006). Automatic dimensionality selection from the scree plot via the use of profile likelihood.
+Computational Statistics &amp; Data Analysis, 51(2):918–930.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">s</span>, which <span class="op">=</span> <span class="fl">2</span>, threshold <span class="op">=</span> <span class="st">"MTS"</span>, top <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 's' not found</span>
-<span class="r-in"><span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">s</span>, which <span class="op">=</span> <span class="fl">1</span>, threshold <span class="op">=</span> <span class="st">"ATS"</span>, top <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 's' not found</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mhuang2001.github.io/mhstability/">mhstability</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">y</span> <span class="op">=</span> <span class="va">mtcars</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">X</span> <span class="op">=</span> <span class="va">mtcars</span><span class="op">[</span>,<span class="fl">3</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu">stabs</span><span class="fu">::</span><span class="fu">stabsel</span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, y <span class="op">=</span> <span class="va">y</span>, B <span class="op">=</span> <span class="fl">50</span>, fitfun <span class="op">=</span> <span class="fu">stabs</span><span class="fu">::</span><span class="va">lars.lasso</span>, PFER <span class="op">=</span> <span class="fl">2</span>, cutoff <span class="op">=</span> <span class="fl">0.6</span>, sampling.type <span class="op">=</span> <span class="st">"SS"</span>, assumption <span class="op">=</span> <span class="st">"r-concave"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘stabs’</span>
+<span class="r-in"><span><span class="fu">mhstability</span><span class="fu">::</span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">res</span>, which <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-in"><span><span class="fu">mhstability</span><span class="fu">::</span><span class="fu">plot_stabs</span><span class="op">(</span><span class="va">res</span>, which <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
