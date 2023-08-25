@@ -1,6 +1,6 @@
 # mhstability
 
-Stability Selection Visualisation Tool and Automatic Threshold Selection.
+Stability Selection Visualisation Tool with Automatic Threshold Selection.
 
 Extends stability selection and introduces automatic threshold selection to compute a data-adaptive stability cutoff. This is an R Package created to complement the use of stabs objects from the stabs package. It visualises variable selection probability and likelihood function through `plot_stabs`. The package also includes an `ats` function to compute the threshold. 
 
