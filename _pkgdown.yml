@@ -1,4 +1,17 @@
 url: https://mhuang2001.github.io/mhstability/
 template:
   bootstrap: 5
+  bootswatch: zephyr
 
+navbar:
+  title: "mhstability"
+  type: default
+  left:
+    - text: "References"
+      href: reference/index.html
+    - text: "Theory"
+      menu: 
+        - text: "Stability Selection"
+          href:  articles/stabilityselection.html
+        - text: "Automatic Threshold Selection"
+          href:  articles/ats.html
