@@ -89,7 +89,7 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
       ggplot2::geom_hline(yintercept = s$cutoff, colour = "red", linetype = "dashed")  +
       ggplot2::annotate("text",label = paste("MTS: ", s$cutoff) ,x = Yaxis, y = s$cutoff - 0.005, size = 3, color = "black", angle = 90) +
       ggplot2::geom_hline(yintercept = q_val, colour = "blue", linetype = "dashed") +
-      ggplot2::annotate("text", label = paste("ATS: ", q_val), x = Yaxis, y = q_val - 0.005, colour = "black", size = 3, angle = 90) +
+      ggplot2::annotate("text", label = paste("ATS: ", round(q_val),2), x = Yaxis, y = q_val - 0.005, colour = "black", size = 3, angle = 90) +
       ggplot2::theme_bw(base_size = 8) + ggplot2::ylab("Frequency Chosen") +
       ggplot2::xlab("Variables")  + ggplot2::labs(caption = paste(threshold,sample.type.nice, "; LASSO")) +
       ggplot2::theme(legend.position = "top") + ggplot2::coord_flip()
@@ -98,7 +98,7 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
   }
 
   if (which == 2){
-    q = getR(convert(s))
+    q = getR(convert(s))s
     lq = getLQ(convert(s))
     q_val = (sort(s$phat[,ncol(s$phat)], decreasing = T)[q]) |> as.vector()
     return(elbow_stabs(q,lq))
