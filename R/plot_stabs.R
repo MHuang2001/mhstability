@@ -98,7 +98,7 @@ plot_stabs = function(s, which = 1, threshold = "ATS", top = ifelse(s$p < 10, s$
   }
 
   if (which == 2){
-    q = getR(convert(s))s
+    q = getR(convert(s))
     lq = getLQ(convert(s))
     q_val = (sort(s$phat[,ncol(s$phat)], decreasing = T)[q]) |> as.vector()
     return(elbow_stabs(q,lq))
