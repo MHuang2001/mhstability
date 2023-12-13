@@ -9,9 +9,9 @@ navbar:
   left:
     - text: "References"
       href: reference/index.html
-    - text: "Theory"
-      menu: 
-        - text: "Stability Selection"
-          href:  articles/stabilityselection.html
-        - text: "Automatic Threshold Selection"
-          href:  articles/ats.html
+    # - text: "Theory"
+    #   menu:
+    #     - text: "Stability Selection"
+    #       href:  articles/stabilityselection.html
+    #     - text: "Automatic Threshold Selection"
+    #       href:  articles/ats.html
